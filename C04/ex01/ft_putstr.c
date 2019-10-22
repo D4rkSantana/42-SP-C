@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esilva-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 10:34:46 by esilva-s          #+#    #+#             */
-/*   Updated: 2019/10/09 13:41:43 by esilva-s         ###   ########.fr       */
+/*   Created: 2019/10/16 16:22:04 by esilva-s          #+#    #+#             */
+/*   Updated: 2019/10/16 16:22:19 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+void	ft_putstr(char *str)
 {
-	int		x;
-	char	letra;
-
-	x = 122;
-	letra = x;
-	while (x >= 97)
+	while (*str != '\0')
 	{
-		write(1, &letra, 1);
-		x--;
-		letra = x;
+		write(1, str, 1);
+		str++;
 	}
 }
