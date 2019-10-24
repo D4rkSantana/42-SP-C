@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esilva-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 16:22:51 by esilva-s          #+#    #+#             */
-/*   Updated: 2019/10/24 16:26:52 by esilva-s         ###   ########.fr       */
+/*   Created: 2019/10/24 19:56:31 by esilva-s          #+#    #+#             */
+/*   Updated: 2019/10/24 19:56:58 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int	main(int argc, char *argv[])
 {
-	write(1, &c, 1);
-}
+	int i;
+	int j;
 
-void	recursive(unsigned int a)
-{
-	if (a > 9)
+	i = argc - 1;
+	while (i > 0)
 	{
-		recursive(a / 10);
+		j = 0;
+		while (argv[i][j])
+		{
+			write(1, &argv[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
+		i--;
 	}
-	ft_putchar(a % 10 + '0');
-}
-
-void	ft_putnbr(int nb)
-{
-	unsigned int a;
-
-	if (nb < 0)
-	{
-		a = 0 - nb;
-		ft_putchar('-');
-	}
-	else
-	{
-		a = nb;
-	}
-	recursive(a);
+	return (0);
 }
