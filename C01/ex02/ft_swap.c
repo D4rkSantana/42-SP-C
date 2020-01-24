@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a1, int *a2)
+void	ft_swap(int *a, int *b)
 {
-	int		temp1;
+	int		temp;
 
-	temp1 = *a1;
-	*a1 = *a2;
-	*a2 = temp1;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
